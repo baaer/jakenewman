@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Jake Newman Enterprises</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sticky-footer-navbar/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  .h1, h2, h3, h4, h5, h6 {
+    font-family: 'Pixelify Sans';
+    font-weight: 800;
+  }
+
+  .p, body {
+    font-family: 'Pixelify Sans';
+    font-weight: lighter;
+  }
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .btn-bd-primary {
+    --bd-violet-bg: #000000;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #000000;
+    --bs-btn-hover-border-color: #140f1d;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #000000;
+    --bs-btn-active-border-color: #000000;
+  }
+
+  .bd-mode-toggle {
+    z-index: 1500;
+  }
+
+  .bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+  }
+  .navbar-toggler {
+    border: none !important;/* Remove the border */
+  }
+</style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer-navbar.css" rel="stylesheet">
+  </head>
+  <body class="d-flex flex-column h-100">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark border-bottom">
+    <div class="container-fluid">
+      <a href="index.html">
+      <img src="image/jnelogo.png" alt="JNE Logo" width="50" height="50" class="rounded-circle">
+      <a class="navbar-brand" href="index.html">JNE | jakenewman.enterprises</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="https://twitter.com/JakeNewmanERC">𝕏</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">📑</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">📧</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <button type="button" class="btn btn-primary position-relative shadow">BUY JNE<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    $0.04
+    <span class="visually-hidden">current price of jne</span>
+  </span>
+</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Begin page content -->
+<main class="flex-shrink-0 p-5">
+  <div class="container">
+    <main>
+    <h1 class="text-body-emphasis">JNE Whitepaper</h1>
+    <p class="fs-5 col-md-8">dated: 2023-2140</p>
+    <hr class="col-3 col-md-2 mb-5">
+
+    <div class="mb-5">
+      <h1 class="text-body-emphasis">official contract address</h1>
+      <a href="https://etherscan.io/address/0x9657477ac915f56ca87c253db1320218ec2d5ddd" class="btn btn-primary btn-md px-4 shadow-lg p-3 mb-5 bg-body-dark rounded">0x9657477ac915f56ca87c253db1320218ec2d5ddd</a>
+      <p>verify on etherscan.io</p>
+    </div>
+
+
+    <div class="row g-5">
+      <div class="col-md-8">
+        <h3 class="pb-4 mb-4 border-bottom">
+          From Jake Newman Enterprises
+        </h3>
+        <article class="blog-post">
+          <h2 class="display-5 link-body-emphasis mb-1">Whitepaper</h2>
+          <p class="blog-post-meta">Updated October 2, 2023 by <a href="#">Jake Newman</a></p>
+          <p>The JNE (Jake Newman Enterprises) whitepaper outlines the journey and vision of an unconventional cryptocurrency project that started as a humorous twist of fate. Jake Newman, the central figure behind JNE, unexpectedly acquired a majority stake in a memecoin cryptocurrency project, setting the stage for an unforeseen transformation into a thriving enterprise.</p>
+          <hr>
+          <h2>About Us</h2>
+          <p>Jake Newman Enterprises (JNE) had a humble beginning, born out of an unexpected twist of fate when Jake Newman stumbled upon a majority stake in a memecoin cryptocurrency project. What started as a lighthearted incident quickly evolved into a thriving enterprise, fueled by the passionate community that rallied behind the JNE token. While our roots are deeply rooted in humor and satire, our growth trajectory has been nothing short of remarkable.</p>
+          <p>Today, JNE stands as a dynamic force in the crypto space, renowned for its strategic acquisition of small-cap crypto projects. Through these acquisitions and their integration into our ecosystem, we aim to enhance their value and strengthen the JNE community. Beyond acquisitions, JNE is at the forefront of exploring emerging professional service offerings designed to cater to the rapidly evolving Web3 ecosystem.</p>
+          <h3>Mission Statement</h3>
+          <p>At Jake Newman Enterprises, we fuse comedy, community, and the power of technology to redefine the crypto landscape. Our mission is twofold: to identify, acquire, and rejuvenate undervalued crypto projects while simultaneously exploring cutting-edge technologies and services that cater to the Web3 ecosystem. Through humor and innovation, we aim to cultivate a vibrant community and play a pivotal role in shaping the future of Web3.</p>
+          <hr>
+          <h2>Tokenomics:</h2>
+          <div class="progress-stacked">
+            <div class="progress" role="progressbar" aria-label="Segment one" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+              <div class="progress-bar"></div>
+            </div>
+            <div class="progress" role="progressbar" aria-label="Segment two" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2.5%">
+              <div class="progress-bar bg-success"></div>
+            </div>
+            <div class="progress" role="progressbar" aria-label="Segment three" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100" style="width: 2.5%">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+          <ul>
+            <li>JNE Token Supply = 100,000,000</li>
+            <li>Jake Newman = 98,000,000</li>
+            <li>Liquidity Pool = Less Than 1%</li>
+          </ul>
+          <div class="alert alert-primary" role="alert">
+            As of Oct. 2023. There is 12%+ of the total supply of JNE in Uniswap V3! <a href="https://etherscan.io/token/tokenholderchart/0x9657477ac915f56ca87c253db1320218ec2d5ddd">See Stats</a>
+          </div>
+          <hr>
+          <h2>distribution:</h2>
+          <ul>
+            <li>Company Allocation (98%): Jake Newman Enterprises holds the lion's share of the JNE token supply, ensuring a substantial reserve of tokens for various enterprise needs.</li>
+            <li>Over-the-Counter (OTC) Exchanges: Facilitating large-scale purchases of $JNE tokens.</li>
+            <li>Team Expansion: Allocating tokens for team growth and incentivization.</li>
+            <li>Reallocations & Growth: Leveraging tokens for strategic growth efforts, especially concerning takeover initiatives.</li>
+            <li>Supply Management: Providing flexibility to either increase or decrease the circulating supply through token burning, based on community feedback and the enterprise's long-term vision.</li>
+            <li>Liquidity Pool (Less than 1%): Allocating under 1,000,000 JNE tokens to the UNISWAPv3 liquidity pool.</li>
+          </ul>
+          <h2>Launch Details</h2>
+          <p>The JNE token was introduced to the market through a stealth launch. This method was chosen to prevent any particular group from having an early advantage, ensuring transparency and organic growth.</p>
+          <p>While Jake Newman retains 98% of the token supply, this is a strategic decision to ensure ample tokens are available for various enterprise needs, as outlined in the distribution section. The enterprise is committed to using this allocation responsibly, always with the best interests of the community and the longevity of the project in mind.</p>
+          <h2>Projects & Portfolio Profile</h2>
+          <p>Jake Newman Enterprises (JNE) has strategically positioned itself within the crypto space by acquiring majority stakes in several promising tokens. Our portfolio reflects our commitment to diversification and our belief in the potential of the projects of which we commit our time and focus. Our acquisition strategy is dynamic, and we're always on the lookout for emerging tokens and projects that align with our vision and offer value to our community token holders..</p>
+          <h3>Enterprise Incubation Program</h3>
+          <p>Jake Newman Enterprises (JNE) recognizes the potential of emerging projects in the crypto space and is dedicated to fostering their growth. Our incubation service offers:</p>
+          <ul>
+            <li>Guidance & Mentorship: Leveraging our network’s vast collective experience in the crypto industry, we provide young projects with the mentorship they need to navigate the complex landscape of cryptocurrency.</li>
+            <li>Technical Support: From smart contract development to security audits, our team offers technical expertise to ensure projects are built on a solid foundation.</li>
+            <li>Marketing & Promotion: With our extensive network and reach, we assist incubated projects in gaining visibility and traction in the competitive crypto market.</li>
+            <li>Strategic Partnerships: Our connections in the industry allow us to facilitate valuable partnerships for incubated projects, opening doors to collaborations and integrations.</li>
+            <li>Exit Strategy: JNE's successful track record includes incubating projects and facilitating their transition to new leadership or ownership, ensuring they continue to thrive beyond our direct involvement.</li>
+          </ul>
+          <p>By offering incubation as a service, JNE aims to empower the next generation of crypto projects,ensuring they have the resources, guidance, and support they need to succeed.</p>
+          <h2>Team</h2>
+          <p>At the heart of Jake Newman Enterprises (JNE) are its founders, who bring passion, expertise, and a vision for the future of the enterprise.</p>
+          <ul>
+            <li>Jake Newman: The driving force behind JNE, Jake's journey from an accidental majority stakeholder in a memecoin project to the leader of the Jake Newman Enterprise brand is a testament to his adaptability, vision, and commitment to the JNE community. With a keen eye for opportunities and a deep understanding of the crypto space, Jake is the guiding vision for JNE's strategic decisions and growth.</li>
+            <li>Mrs. Jake Newman: A pivotal figure in the JNE story, Mrs. Jake Newman brings a unique perspective and set of skills to the table. Her insights and contributions have been instrumental in shaping the direction, structure, and ethos of the enterprise.</li>
+          </ul>
+        <hr>
+        <h2>Expanding The Team</h2>
+        <p>Recognizing the value of community-driven growth, JNE is actively looking to expand its team. Our approach is to identify and onboard top talent emerging from within our own community, ensuring that the people who join us are aligned with our values, understand our vision, and are passionate about our mission.</p>
+        <article class="blog-post">
+          <h2 class="display-5 link-body-emphasis mb-1">Conclusion</h2>
+          <p>Jake Newman Enterprises (JNE) stands as a testament to the power of community, vision, and adaptability in the ever-evolving world of cryptocurrency. From its serendipitous origins to its strategic growth, JNE consistently demonstrates its commitment to transparency, innovation, and the well-being of its community.</p>
+          <p>With a secure foundation - evidenced by a contract without an owner, locked liquidity, and audited code - JNE ensures the trust and safety of its token holding community members. Our diverse portfolio, wide range of services, and dedicated team showcase our holistic approach to the crypto space.</p>
+        </article>
+        <nav class="blog-pagination" aria-label="Pagination">
+          <a class="btn btn-outline-primary rounded-pill" href="#">Thank you for reading our whitepaper</a>
+          <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">version 1</a>
+        </nav>
+
+      </div>
+
+      <div class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+          <div class="p-4 mb-3 bg-body-tertiary rounded">
+            <h4 class="fst-italic">$JNE</h4>
+            <p class="mb-0">As we look to the future, we are excited about the endless possibilities and the journey ahead. We invite our token holding community members and partners to join us in shaping the next chapters of the JNE story. Together, with humor, innovation, and a shared vision, we will continue to redefine the boundaries of what's possible in the world of crypto.</p>
+          </div>
+</body>
+
+<hr class="col-3 col-md-2 mb-5 border-bottom">
+
+<div class="border-bottom">
+    <h1 class="mt-5">Accidental Hostile Takeoverer.</h1>
+    <p class="lead">built by <code class="small">@maver0x</code>.</p>
+  </div>
+<footer class="footer mt-auto py-3 bg-body-tertiary">
+  <div class="container">
+    <span class="text-body-secondary">Copyright &copy; 2023-2140 | Jake Newman Enterprises. All Right Reserved.</span>
+  </div>
+</footer>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>
