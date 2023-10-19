@@ -21,13 +21,14 @@
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-  .h1, h2, h3, h4, h5, h6 {
-    font-family: 'Pixelify Sans';
-    font-weight: 800;
-  }
+.h1, h2, h3, h4, h5, h6 {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
 
   .p, body {
-    font-family: 'Pixelify Sans';
+    font-family: 'Pixelify Sans', sans-serif;
     font-weight: lighter;
   }
 
@@ -167,9 +168,8 @@
         </li>
       </ul>
     </div>
-
-
 <header>
+
   <!-- Fixed navbar -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark border-bottom">
     <div class="container-fluid">
@@ -185,19 +185,19 @@
             <a class="nav-link active" aria-current="page" href="https://twitter.com/JakeNewmanERC">𝕏</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">📑</a>
+            <a class="nav-link active" aria-current="page" href="buy.html">Swap</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">📧</a>
+            <a class="nav-link" href="whitepaper.html">📑 whitepaper</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">📧 contact jakenewman</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
+        <a href="https://app.uniswap.org/swap?outputCurrency=0x9657477ac915f56ca87c253db1320218ec2d5ddd&chain=ethereum">
           <button type="button" class="btn btn-primary position-relative shadow">BUY JNE<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-    $0.04
-    <span class="visually-hidden">current price of jne</span>
-  </span>
-</button>
-        </form>
+          </button>
+        </a>
       </div>
     </div>
   </nav>
@@ -209,7 +209,10 @@
     <main>
     <h1 class="text-body-emphasis">JNE Whitepaper</h1>
     <p class="fs-5 col-md-8">dated: 2023-2140</p>
+    <a href="jne_whitepaper.pdf" download>
+      <button>PDF Whitepaper</button></a>
     <hr class="col-3 col-md-2 mb-5">
+
 
     <div class="mb-5">
       <h1 class="text-body-emphasis">official contract address</h1>
@@ -312,7 +315,7 @@
 
 <div class="border-bottom">
     <h1 class="mt-5">Accidental Hostile Takeoverer.</h1>
-    <p class="lead">built by <code class="small">@maver0x</code>.</p>
+    <p class="lead">built by <code class="small">@maver0x</code>.</p> | <p>PDF Whitepaper<p>
   </div>
 <footer class="footer mt-auto py-3 bg-body-tertiary">
   <div class="container">
